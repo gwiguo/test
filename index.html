@@ -1,167 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二手车</title>
     <style>
-  #app{
-    position: relative;  
-    width: 820px;  
-    margin: 150px auto;
-  }
-  .search_task .el-input__inner{
-    width: 290px;
-  }
-  .input_search{
-    position: absolute;
-    left: 500px;
-    top: 0;
-    width: 320px;
-  }
-  .el-input__icon{
-    position: absolute;   
-    right: 5px; 
-    color: #bfc2d9;
-  }
-  .header .el-button{
-    float: right;    
-    background-color: #409eff !important;
-    border-color: #409eff !important;
-    color: white !important;
-    border-radius: 0;
-  }
-  .search_task .el-input__icon {
-    position: absolute;    
-    color: #bfc2d9;
-    font-size: 12px;
-    transition: transform .3s;
-    transform: translateY(-50%) rotate(180deg);
-    line-height: 16px;
-    top: 2px;
-    left: -27px;
-    cursor: pointer;
-}
-.search_type{
-  width: 180px;
-  margin-left: 10px;
-}
-  .search_type .el-input__icon {
-    position: absolute;    
-    color: #bfc2d9;
-    font-size: 12px;
-    transition: transform .3s;
-    transform: translateY(-50%) rotate(180deg);
-    line-height: 16px;
-    top: 2px;
-    left: -27px;
-    cursor: pointer;
-}
-.footer{
-  margin-top: 20px;
-}
-
-.footer .el-table tr{
-  height:68px;
-}
-.pages{
-  float: right;  
-  margin-top: 16px;
-}
-tbody tr:nth-child(1) td:nth-child(2){
-  color: green;
-}
-tbody tr:nth-child(2) td:nth-child(2){
-  color:red;
-}
-tbody tr:nth-child(3) td:nth-child(2){
-  color:#606266;
-}
-tbody tr:nth-child(4) td:nth-child(2){
-  color:#FFAF40;
-}
-tbody .el-table_1_column_1 .cell{
-  color:#458be4;
-}
-</style>
+    *{padding: 0;margin: 0;}
+    li{
+        list-style-type: none;
+    }
+    #box{
+        width: 1500px;
+        margin: 0 auto;
+    }
+    #box li{
+        float: left;
+    }
+    #box li img{
+        width: 500px;
+        height: 400px;
+    }
+    </style>
 </head>
-
 <body>
-    <div id="app">
-        <div class="header">
-            <el-select v-model="data1" class="search_task">
-                <i class="el-input__icon"></i>
-                <el-option v-for="item in options" :label="item.text" :key="item.value" :value="item.value">
-                </el-option>
-            </el-select>
-            <el-select v-model="data2" class="search_type">
-                <i class="el-input__icon"></i>
-                <el-option v-for="item in typeOptions" :label="item.text" :key="item.value" :value="item.value">
-                </el-option>
-            </el-select>
+    
 
-            <div>
-              <el-input placeholder="请输入内容"  class="input_search" v-model="input">
-                <el-button type="primary" icon="el-icon-search" slot="append">搜索</el-button>
-              </el-input>
-            </div>
-        </div>
-        <div class="footer">
-            <el-table :data="tableData" style="width: 100%">
-                <el-table-column prop="url" label="URL" width="500" style="color: #909399 !important">
-
-                </el-table-column>
-                <el-table-column prop="state" label="状态" width="150">
-
-                </el-table-column>
-                <el-table-column prop="date" label="记录时间">
-
-                </el-table-column>
-            </el-table>
-            <div style="float: right">
-              <img src="./1.png" alt="">
-            </div>
-        </div>
+    <div id="wrap">
+        <ul id="box">
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/610dc034jw1fanrdyaxi6j20u00k1ta9.jpg" alt="">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/610dc034jw1fak99uh554j20u00u0n09.jpg" alt="">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/610dc034jw1faj6sozkluj20u00nt75p.jpg" alt="">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/610dc034jw1fahy9m7xw0j20u00u042l.jpg" alt="">
+            </li>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/610dc034jw1fagrnmiqm1j20u011hanr.jpg" alt="">
+            </li>
+            <li>
+                <img src="http://ww4.sinaimg.cn/large/610dc034gw1fafmi73pomj20u00u0abr.jpg" alt="">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/610dc034jw1faaywuvd20j20u011gdli.jpg" alt="">
+            </li>
+            <li>
+                <img src="http://ww1.sinaimg.cn/large/610dc034gw1fa9dca082pj20u00u0wjc.jpg" alt="">
+            </li>
+            <li>
+                <img src="http://ww2.sinaimg.cn/large/610dc034jw1fa42ktmjh4j20u011hn8g.jpg" alt="">
+            </li>
+        </ul>
     </div>
-    <script>
-    new Vue({
-        el: '#app',
-        data: {
-            input : "",
-            data1: "请选择子任务",
-            data2: "请选择搜索类型",
-            options: [
-                { value: "ad7daa81f903470c_1555772400", text: "ad7daa81f903470c_1555772400" },
-                { value: "ad7daa81f903470c_1549378800", text: "ad7daa81f903470c_1549378800" },
-                { value: "ad7daa81f903470c_1544972400", text: "ad7daa81f903470c_1544972400" },
-                { value: "ad7daa81f903470c_1542715528", text: "ad7daa81f903470c_1542715528" }
-            ],
-            typeOptions: [
-                { value: "精准搜索", text: "精准搜索" },
-                { value: "模糊搜索", text: "模糊搜索" }
-            ],
-            tableData: [{
-                url: 'https://baike.baidu.com/item/%E7%BB%BF%E8%90%9D/70257',
-                state: '成功',
-                date: '2016-05-01 12:00:00'
-            }, {
-                url: 'https://baike.baidu.com/item/%E7%BB%BF%E8%90%9D/70257',
-                state: '失败(错误码:10000)',
-                date: '2016-05-01 12:00:00'
-            }, {
-                url: 'https://baike.baidu.com/item/%E7%BB%BF%E8%90%9D/70257',
-                state: '未抓取',
-                date: '2016-05-01 12:00:00'
-            }, {
-                url: 'https://baike.baidu.com/item/%E7%BB%BF%E8%90%9D/70257',
-                state: '未知',
-                date: '2016-05-01 12:00:00'                
-            }]
-        }
-    })
-    </script>
+    
+
+
+
 </body>
 </html>
